@@ -6,13 +6,13 @@ export default function Cart_page() {
    
     
 
-    {/* <div className="f-btn cmpr-toggler" id="cmpr-btn">
+    <div className="f-btn cmpr-toggler" id="cmpr-btn">
       <i className="material-icons">library_add</i>
       <div className="label">Compare</div>
       <span className="counter">0</span>
-    </div> */}
+    </div> 
 
-    {/* <div className="drawer cmpr-panel " id="cmpr-panel">
+   <div className="drawer cmpr-panel " id="cmpr-panel">
       <div className="title">
         <p>Compare Product</p>
         <span className="cmpr-toggler">
@@ -23,9 +23,9 @@ export default function Cart_page() {
         <div className="loader" />
       </div>
       <div className="footer btn-wrap" />
-    </div> */}
+    </div> 
 
-    {/* <div className="drawer m-cart " id="m-cart">
+     <div className="drawer m-cart " id="m-cart">
       <div className="title">
         <p>YOUR CART</p>
         <span className="mc-toggler">
@@ -39,7 +39,7 @@ export default function Cart_page() {
       
     <div className="footer" />
 
-    </div> */}
+    </div>
 
    
 
