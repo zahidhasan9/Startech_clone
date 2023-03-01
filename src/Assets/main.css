@@ -1824,7 +1824,8 @@ header .search .ic {
 .navbar-nav>.nav-item:nth-child(17):hover .drop-menu-1,
 .navbar-nav>.nav-item:nth-child(18):hover .drop-menu-1 {
     right: 10px;
-    left: auto
+    left: auto;
+   
 }
 
 .navbar-nav>.nav-item:nth-child(10):hover .drop-menu-2,

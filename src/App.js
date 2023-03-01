@@ -1,10 +1,18 @@
 import React from "react";
+import {BrowserRouter as Router} from 'react-router-dom';
 // import './App.css';
-import All_page from "./Compoments/All_page";
+import Footer from "./Compoments/Footer";
+import About from "./Compoments/Middle Page/About_m";
+import Navbar from './Compoments/Navbar';
+import Navbar_copy from './Compoments/Navbar copy';
 function App() {
   return (
   <>
-  <All_page/>
+   <Navbar_copy/>
+  {/* <Navbar/> */}
+
+  <About/>
+  <Footer/>
   </>
 
   );

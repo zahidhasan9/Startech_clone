@@ -1,19 +1,18 @@
 import React,{useState} from 'react'
+import { menuItems } from './Menu Item/Menu_iem';
 export default function Navbar() {
 // Toggler function
     const [openMenu, setOpenMenu] = useState(false);
     const toggleMenu = () => {
       setOpenMenu(!openMenu);
     };
-console.log(openMenu)
+// menuItems.map((item,index)=>
+
+// console.log(item.dropdown))
+    
+// console.log(openMenu)
 
   return (
-<div>
-  <div className="f-btn mc-toggler" id="cart">
-      <i className="material-icons">shopping_basket</i>
-      <div className="label">Cart</div>
-      <span className="counter">0</span>
-    </div>
 
     <header id="header">
 <div className="top">
@@ -130,20 +129,45 @@ console.log(openMenu)
 <nav className={openMenu? "navbar open":"navbar"}>
   <div className="container">
     <ul className="navbar-nav">
-      <li className="nav-item has-child c-1">
+      
+     { menuItems.length > 0 &&
+     menuItems.map((menu) => (
+
+      <li key={menu.id} className="nav-item has-child c-1 open" >
         <a className="nav-link" href="https://www.startech.com.bd/desktops">
-          Desktop
+          {menu.title}
         </a>
-        <ul className="drop-down drop-menu-1">
-          <li className="nav-item">
+
+    
+
+        {/* { 
+           menuItems.length > 0 &&
+            menuItems.map((menu) => (
+            <li key={menu.id} className="drop">
+              <a href={menu.url}>{menu.title}</a>
+              </li>
+              )
+              ) 
+             
+        } */}
+        
+       
+        { menuItems?.dropdown?.length > 0 &&
+            menuItems.dropdown.map((menu) => (
+          <ul className="drop-down drop-menu-1 open">
+         
+          <li li key={menu.id} className="nav-item">
             <a
               className="nav-link"
               href="https://www.startech.com.bd/special-pc"
             >
-              Desktop Offer
+              {menu.title}
+              {console.log(menu.dropdown)}
+              asfhdsajgfjdsag
             </a>
           </li>
-          <li className="nav-item has-child">
+
+          {/* <li className="nav-item has-child">
             <a
               className="nav-link"
               href="https://www.startech.com.bd/desktops/star-pc"
@@ -168,251 +192,18 @@ console.log(openMenu)
                 </a>
               </li>
             </ul>
-          </li>
-          <li className="nav-item has-child">
-            <a
-              className="nav-link"
-              href="https://www.startech.com.bd/desktops/gaming-pc"
-            >
-              Gaming PC
-            </a>
-            <ul className="drop-down drop-menu-2">
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/desktops/gaming-pc/intel-gaming-pc"
-                >
-                  Intel PC
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/desktops/gaming-pc/amd-gaming-pc"
-                >
-                  RYZEN PC
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className="nav-item has-child">
-            <a
-              className="nav-link"
-              href="https://www.startech.com.bd/desktops/brand-pc"
-            >
-              Brand PC
-            </a>
-            <ul className="drop-down drop-menu-2">
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/desktops/brand-pc/acer-desktop"
-                >
-                  Acer
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/desktops/brand-pc/asus-desktop"
-                >
-                  Asus
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/desktops/brand-pc/dell-desktop"
-                >
-                  Dell
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/desktops/brand-pc/hp-desktop"
-                >
-                  HP
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/desktops/brand-pc/lenovo-desktop"
-                >
-                  Lenovo
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/walton-brand-pc"
-                >
-                  Walton
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/msi-brand-pc"
-                >
-                  MSI
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className="nav-item has-child">
-            <a
-              className="nav-link"
-              href="https://www.startech.com.bd/desktops/all-in-one-pc"
-            >
-              All-in-One PC
-            </a>
-            <ul className="drop-down drop-menu-2">
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/desktops/all-in-one-pc/dell-all-in-one"
-                >
-                  DELL
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/microsoft-all-in-one-pc"
-                >
-                  Microsoft
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/msi-all-in-one-pc"
-                >
-                  MSI
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/desktops/all-in-one-pc/hp-all-in-one"
-                >
-                  HP
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/desktops/all-in-one-pc/asus-all-in-one"
-                >
-                  ASUS
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/desktops/all-in-one-pc/lenovo-all-in-one"
-                >
-                  LENOVO
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className="nav-item has-child">
-            <a
-              className="nav-link"
-              href="https://www.startech.com.bd/desktops/portable-mini-pc"
-            >
-              Portable Mini PC
-            </a>
-            <ul className="drop-down drop-menu-2">
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/desktops/portable-mini-pc/mini-pc-asus"
-                >
-                  {" "}
-                  Asus
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/desktops/portable-mini-pc/intel-mini-pc"
-                >
-                  Intel
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/desktops/portable-mini-pc/gigabyte-mini-pc"
-                >
-                  GIGABYTE
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/zotac-portable-mini-pc"
-                >
-                  Zotac
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.startech.com.bd/msi-portable-mini-pc"
-                >
-                  MSI
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className="nav-item">
-            <a
-              className="nav-link"
-              href="https://www.startech.com.bd/desktops/apple-mini-pc"
-            >
-              Apple Mac Mini
-            </a>
-          </li>
-          <li className="nav-item">
-            <a
-              className="nav-link"
-              href="https://www.startech.com.bd/desktops/apple-imac-desktop-pc"
-            >
-              Apple iMac
-            </a>
-          </li>
-          <li className="nav-item">
-            <a
-              className="nav-link"
-              href="https://www.startech.com.bd/apple-mac-studio"
-            >
-              Apple Mac Studio
-            </a>
-          </li>
-          <li className="nav-item">
-            <a
-              className="nav-link"
-              href="https://www.startech.com.bd/desktops/economy-pc"
-            >
-              Budget PC
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.startech.com.bd/desktops"
-              className="see-all"
-            >
-              Show All Desktop
-            </a>
-          </li>
+          </li> */}
         </ul>
+        )
+        ) }
+
       </li>
-      <li className="nav-item has-child c-1">
+      )
+              ) } 
+
+      
+      
+      {/* <li className="nav-item has-child c-1">
         <a
           className="nav-link"
           href="https://www.startech.com.bd/laptop-notebook"
@@ -938,6 +729,7 @@ console.log(openMenu)
           </li>
         </ul>
       </li>
+
       <li className="nav-item has-child c-1">
         <a
           className="nav-link"
@@ -2681,6 +2473,7 @@ console.log(openMenu)
           </li>
         </ul>
       </li>
+
       <li className="nav-item has-child c-1">
         <a className="nav-link" href="https://www.startech.com.bd/monitor">
           Monitor
@@ -2928,6 +2721,7 @@ console.log(openMenu)
           </li>
         </ul>
       </li>
+
       <li className="nav-item has-child c-1">
         <a className="nav-link" href="https://www.startech.com.bd/ups-ips">
           UPS
@@ -3188,6 +2982,7 @@ console.log(openMenu)
           </li>
         </ul>
       </li>
+
       <li className="nav-item has-child c-1">
         <a
           className="nav-link"
@@ -3278,6 +3073,7 @@ console.log(openMenu)
           </li>
         </ul>
       </li>
+
       <li className="nav-item has-child c-1">
         <a
           className="nav-link"
@@ -3426,6 +3222,7 @@ console.log(openMenu)
           </li>
         </ul>
       </li>
+
       <li className="nav-item has-child c-1">
         <a
           className="nav-link"
@@ -4657,6 +4454,7 @@ console.log(openMenu)
           </li>
         </ul>
       </li>
+
       <li className="nav-item has-child c-1">
         <a className="nav-link" href="https://www.startech.com.bd/camera">
           Camera
@@ -5058,6 +4856,7 @@ console.log(openMenu)
           </li>
         </ul>
       </li>
+
       <li className="nav-item has-child c-1">
         <a
           className="nav-link"
@@ -5519,6 +5318,7 @@ console.log(openMenu)
           </li>
         </ul>
       </li>
+
       <li className="nav-item has-child c-2">
         <a
           className="nav-link"
@@ -6097,6 +5897,7 @@ console.log(openMenu)
           </li>
         </ul>
       </li>
+
       <li className="nav-item has-child c-2">
         <a className="nav-link" href="https://www.startech.com.bd/software">
           Software
@@ -6230,6 +6031,7 @@ console.log(openMenu)
           </li>
         </ul>
       </li>
+
       <li className="nav-item has-child c-2">
         <a
           className="nav-link"
@@ -6446,6 +6248,7 @@ console.log(openMenu)
           </li>
         </ul>
       </li>
+
       <li className="nav-item has-child c-2">
         <a
           className="nav-link"
@@ -8690,6 +8493,7 @@ console.log(openMenu)
           </li>
         </ul>
       </li>
+
       <li className="nav-item has-child c-1">
         <a className="nav-link" href="https://www.startech.com.bd/gadget">
           Gadget
@@ -9866,6 +9670,7 @@ console.log(openMenu)
           </li>
         </ul>
       </li>
+
       <li className="nav-item has-child c-1">
         <a className="nav-link" href="https://www.startech.com.bd/gaming">
           Gaming
@@ -10224,6 +10029,7 @@ console.log(openMenu)
           </li>
         </ul>
       </li>
+
       <li className="nav-item has-child c-2">
         <a
           className="nav-link"
@@ -10364,6 +10170,7 @@ console.log(openMenu)
           </li>
         </ul>
       </li>
+
       <li className="nav-item has-child c-1">
         <a
           className="nav-link"
@@ -10429,11 +10236,54 @@ console.log(openMenu)
             </a>
           </li>
         </ul>
-      </li>
+      </li> */}
+
     </ul>
   </div>
 </nav>
 </header>
-</div>
   )
 }
+
+
+
+
+
+{/* <ul className="main__menu">
+        {menus.length > 0 &&
+          menus.map((menu) => (
+            <li key={menu.id} className="drop">
+              <Link to={menu.link}>{menu.text}</Link>
+
+              {menu?.dropdown?.length > 0 && (
+                <ul className="dropdown">
+                  {menu.dropdown.map((dropdownMenu) => (
+                    <li key={dropdownMenu.id}>
+                      <Link to={menu.link}>{dropdownMenu.text}</Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {menu?.megaMenus?.length > 0 && (
+                <ul className="dropdown mega_dropdown">
+                  {menu.megaMenus.map((megaMenu) => (
+                    <li key={megaMenu.id}>
+                      <Link to={megaMenu.link}>{megaMenu.megaMenuTitle}</Link>
+                      {megaMenu.megamenuItems?.length > 0 && (
+                        <ul className="mega__item">
+                          {megaMenu.megamenuItems.map((megamenuItem) => (
+                            <li key={megamenuItem.id}>
+                              <Link to={megamenuItem.link}>{megamenuItem.text}</Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+      </ul>
+    </nav> */}
