@@ -127,8 +127,12 @@ console.log(openMenu)
     </div>
   </div>
 </div> 
+
+
 <nav className={openMenu? "navbar open":"navbar"}>
   <div className="container">
+    
+    
     <ul className="navbar-nav">
       <li className="nav-item has-child c-1">
         <a className="nav-link" href="https://www.startech.com.bd/desktops">

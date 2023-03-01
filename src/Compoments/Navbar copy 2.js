@@ -1,28 +1,20 @@
 import React, { useState } from "react";
-import {menuitem} from './Menu Item/Menu_iem'
+import Menu_item from './Menu Item/Menu_iem'
 
-export default function Navbar(item) {
+
+export default function Navbar() {
   // Toggler function
-  const [opensubMenu, setOpensubMenu] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
   };
-  const togglesubMenu = () => {
-    setOpensubMenu(!opensubMenu);
-  };
   // menuItems.map((item,index)=>
-  const[child,setChild]=useState([])
-  // // console.log(item,'lol'))
-  // menuitem.map((menu,index) => (
-  //   setChild()
-  //   console.log(menu.id),
-  //   console.log(menu.submenu?.length)
-    
-  // ))
-  // console.log(child)
 
-  // console.log(childrens)
+  // console.log(item,'lol'))
+
+  
+
+
 
   return (
     <header id="header">
@@ -145,76 +137,62 @@ export default function Navbar(item) {
           </div>
         </div>
       </div>
-
+      
       <nav className={openMenu ? "navbar open" : "navbar"}>
         <div className="container">
-          {/* {menu?.dropdown?.length > 0 && (
-                <ul className="dropdown">
-                  {menu.dropdown.map((dropdownMenu) => (
-                    <li key={dropdownMenu.id}>
-                      <Link to={menu.link}>{dropdownMenu.text}</Link>
-                    </li>
-                  ))}
-                </ul>
-              )} */}
-
           <ul className="navbar-nav">
-            {
-              menuitem.length > 0 &&
-              menuitem.map((menu,i) => (
-                <li key={i} onClick={togglesubMenu} className=
-                 {opensubMenu ? "nav-item has-child c-1  open" : "nav-item has-child c-1 "}
-                >
-                  <a className="nav-link" href="https://www.startech.com.bd/">{menu.linkText}</a>
-
-                  {
-                  menu?.submenu?.length > 0 &&
-                  menu.submenu.map((menu1,i) => (
-                      <ul  className="drop-down drop-menu-1 "
-                      // {opensubMenu ? "drop-down drop-menu-1 open" : "drop-down drop-menu-1 "}
-                      >
-                        <li key={i}className="nav-item">
-                          <a className="nav-link" href="">
-                            {menu1.linkText}
-                            {/* {console.log(menu1.linkText)} */}
-                          </a>
-                        </li>
-                      </ul>
-                    ))}
+            
+            <li  className="nav-item has-child c-1 ">
+              <a
+                className="nav-link"
+                href="https://www.startech.com.bd/desktops">  desktops
+                </a>
+             
+              <ul className="drop-down drop-menu-1  ">
+                <li  className="nav-item">
+                  <a
+                    className="nav-link"
+                    href="https://www.startech.com.bd/special-pc"
+                  >
+                    acer
+                  </a>
                 </li>
-              ))}
+
+                <li className="nav-item has-child">
+                  <a
+                    className="nav-link"
+                    href="https://www.startech.com.bd/desktops/star-pc"
+                  >
+                    Star PC
+                  </a>
+                  <ul className="drop-down drop-menu-2 open">
+                    <li className="nav-item">
+                      <a
+                        className="nav-link"
+                        href="https://www.startech.com.bd/intel-pc"
+                      >
+                        Intel PC
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a
+                        className="nav-link"
+                        href="https://www.startech.com.bd/ryzen-pc"
+                      >
+                        Ryzen PC
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+           
           </ul>
         </div>
       </nav>
     </header>
   );
 }
-
-
-//   if(item.childrens){
-//     return (
-//         <div className= "sidebar-item open" >
-//             <div className="sidebar-title">
-//                 <span>
-//                     { item.icon && <i className={item.icon}></i> }
-//                     {item.title}    
-//                 </span> 
-//                 <i className="bi-chevron-down toggle-btn" ></i>
-//             </div>
-//             <div className="sidebar-content">
-//                 { item.childrens.map((child, index) => <Navbar key={index} item={child} />) }
-//             </div>
-//         </div>
-//     )
-// }else{
-//     return (
-//         <a href={item.path || "#"} className="sidebar-item plain">
-//             { item.icon && <i className={item.icon}></i> }
-//             {item.title}
-//         </a>
-//     )
-// }
-// }
 
 {
   /* <ul className="main__menu">
@@ -256,33 +234,3 @@ export default function Navbar(item) {
       </ul>
     </nav> */
 }
-
-
-
- {/* <li className="nav-item has-child">
-                  <a
-                    className="nav-link"
-                    href="https://www.startech.com.bd/desktops/star-pc"
-                  >
-                    Star PC
-                  </a>
-                 
-                  <ul className="drop-down drop-menu-2 open">
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        href="https://www.startech.com.bd/intel-pc"
-                      >
-                        Intel PC
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        href="https://www.startech.com.bd/ryzen-pc"
-                      >
-                        Ryzen PC
-                      </a>
-                    </li>
-                  </ul>
-                  </li> */}
