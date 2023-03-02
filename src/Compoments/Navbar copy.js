@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 import {menuitem} from './Menu Item/Menu_iem'
 
@@ -6,36 +6,29 @@ export default function Navbar(item) {
   // Toggler function
   const [opensubMenu, setOpensubMenu] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
+
+  const[navsticky,setavsticky]=useState(false)
+
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
   };
   const togglesubMenu = () => {
     setOpensubMenu((prev)=>!prev);
   };
-  const[child,setChild]=useState([])
 
-  const getNextSibling = function (elem, selector) {
-    // Get the next sibling element
-    var sibling = elem.nextElementSibling;
-    // If there's no selector, return the first sibling
-    if (!selector) return sibling;
-    // If the sibling matches our selector, use it
-    // If not, jump to the next sibling and continue the loop
-    while (sibling) {
-        if (sibling.matches(selector)) return sibling;
-        sibling = sibling.nextElementSibling
+  const handleScroll = () => {
+    if (window.scrollY >= 100) {
+      setavsticky(true);
+    } else {
+      setavsticky(false);
     }
-}
-//   const triggerChild = (e) => {
-//     let subMenu = '';
-//     subMenu = (getNextSibling(e.target, '.drop-down drop-menu-') !== undefined) ? getNextSibling(e.target, 'drop-down drop-menu-') : null;
-//     if (subMenu !== null && subMenu !== undefined && subMenu !== '') {
-//         subMenu.classList = subMenu.classList.contains('open') ? 'subdrop-down drop-menu-' : 'drop-down drop-menu-';
-//     }
-// }
- 
+  }
+  window.addEventListener('scroll', handleScroll);
+
+
 
   return (
+    <body class={navsticky?"common-home on-scroll":"common-home"}>
     <header id="header">
       <div className="top">
         <div className="container">
@@ -160,27 +153,26 @@ export default function Navbar(item) {
       <nav className={openMenu ? "navbar open" : "navbar"}>
         <div className="container">
          
-          <ul className="navbar-nav">
-          {
-          menuitem.length > 0 ? menuitem.map((item, i) => (
-                    <li key={i} className={`${item.child ? 'nav-item has-child open' : 'nav-item '} `} >
-                        {item.child ? <a  className="nav-link" onClick={e => e.preventDefault()} to="/"> {item.linkText} </a> : <a className="nav-link"  to={item.link}> {item.linkText} </a>}
+          <ul className="navbar-nav" onClick={togglesubMenu}>
+          { menuitem.length > 0 ? menuitem.map((item, i) => (
+                    <li key={i} className={`${item.child  ? 'nav-item has-child ' : 'nav-item '} `}  >
+                        {item.child ? <a  className="nav-link"  href="/"> {item.linkText} </a> : <a className="nav-link"  href={item.link}> {item.linkText} </a>}
                         {item.child ?
                             <ul className="drop-down drop-menu-1 " role="menu">
                                 {item.submenu.map((sub_item, i) => (
                                     <li key={i} className={`${sub_item.child ? 'nav-item has-child open ' : ''} `}>
-                                        {sub_item.child ? <a className="nav-link" onClick={e => e.preventDefault()} to="/"> {sub_item.linkText} </a> : <a className="nav-link" to={sub_item.link}> {sub_item.linkText} </a>}
+                                        {sub_item.child ? <a className="nav-link"  href="/"> {sub_item.linkText} </a> : <a className="nav-link" href={sub_item.link}> {sub_item.linkText} </a>}
                                         {sub_item.submenu ?
                                             <ul className="drop-down drop-menu-2">
                                                 {sub_item.submenu.map((third_item, i) => (
                                                     <li className="nav-item" key={i}><a className="nav-link"
-                                                        to={third_item.link}>{third_item.linkText}</a>
+                                                        href={third_item.link}>{third_item.linkText}</a>
                                                     </li>
                                                 ))}
                                             </ul> : null}
-                                    </li>
-                                ))}
-                            </ul>
+                                          </li>
+                                        ))}
+                                    </ul>
                             : null
                         }
                     </li>
@@ -190,6 +182,7 @@ export default function Navbar(item) {
         </div>
       </nav>
     </header>
+    </body>
   );
 }
 

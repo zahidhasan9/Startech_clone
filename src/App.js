@@ -11,6 +11,7 @@ import Navbar_copy from './Compoments/Navbar copy';
 function App() {
   return (
   <>
+  <div className="bg-gray content ">
    <Navbar_copy/>
   {/* <Navbar/> */}
   <Cart_page/>
@@ -18,6 +19,7 @@ function App() {
 <Middle_Page_main/>
   <About/>
   <Footer/>
+  </div>
   </>
 
   );

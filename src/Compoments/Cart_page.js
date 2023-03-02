@@ -5,14 +5,19 @@ export default function Cart_page() {
     <>
    
     
-
+   <div class="f-btn mc-toggler" id="cart">
+        <i class="material-icons">shopping_basket</i>
+        <div class="label">Cart</div>
+        <span class="counter">0</span>
+    </div>
+    
     <div className="f-btn cmpr-toggler" id="cmpr-btn">
       <i className="material-icons">library_add</i>
       <div className="label">Compare</div>
       <span className="counter">0</span>
     </div> 
 
-   <div className="drawer cmpr-panel " id="cmpr-panel">
+   <div className="drawer cmpr-panel  " id="cmpr-panel">
       <div className="title">
         <p>Compare Product</p>
         <span className="cmpr-toggler">
