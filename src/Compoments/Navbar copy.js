@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {menuitem} from './Menu Item/Menu_iem'
 
 export default function Navbar(item) {
@@ -9,20 +10,30 @@ export default function Navbar(item) {
     setOpenMenu(!openMenu);
   };
   const togglesubMenu = () => {
-    setOpensubMenu(!opensubMenu);
+    setOpensubMenu((prev)=>!prev);
   };
-  // menuItems.map((item,index)=>
   const[child,setChild]=useState([])
-  // // console.log(item,'lol'))
-  // menuitem.map((menu,index) => (
-  //   setChild()
-  //   console.log(menu.id),
-  //   console.log(menu.submenu?.length)
-    
-  // ))
-  // console.log(child)
 
-  // console.log(childrens)
+  const getNextSibling = function (elem, selector) {
+    // Get the next sibling element
+    var sibling = elem.nextElementSibling;
+    // If there's no selector, return the first sibling
+    if (!selector) return sibling;
+    // If the sibling matches our selector, use it
+    // If not, jump to the next sibling and continue the loop
+    while (sibling) {
+        if (sibling.matches(selector)) return sibling;
+        sibling = sibling.nextElementSibling
+    }
+}
+//   const triggerChild = (e) => {
+//     let subMenu = '';
+//     subMenu = (getNextSibling(e.target, '.drop-down drop-menu-') !== undefined) ? getNextSibling(e.target, 'drop-down drop-menu-') : null;
+//     if (subMenu !== null && subMenu !== undefined && subMenu !== '') {
+//         subMenu.classList = subMenu.classList.contains('open') ? 'subdrop-down drop-menu-' : 'drop-down drop-menu-';
+//     }
+// }
+ 
 
   return (
     <header id="header">
@@ -148,41 +159,33 @@ export default function Navbar(item) {
 
       <nav className={openMenu ? "navbar open" : "navbar"}>
         <div className="container">
-          {/* {menu?.dropdown?.length > 0 && (
-                <ul className="dropdown">
-                  {menu.dropdown.map((dropdownMenu) => (
-                    <li key={dropdownMenu.id}>
-                      <Link to={menu.link}>{dropdownMenu.text}</Link>
-                    </li>
-                  ))}
-                </ul>
-              )} */}
-
+         
           <ul className="navbar-nav">
-            {
-              menuitem.length > 0 &&
-              menuitem.map((menu,i) => (
-                <li key={i} onClick={togglesubMenu} className=
-                 {opensubMenu ? "nav-item has-child c-1  open" : "nav-item has-child c-1 "}
-                >
-                  <a className="nav-link" href="https://www.startech.com.bd/">{menu.linkText}</a>
-
-                  {
-                  menu?.submenu?.length > 0 &&
-                  menu.submenu.map((menu1,i) => (
-                      <ul  className="drop-down drop-menu-1 "
-                      // {opensubMenu ? "drop-down drop-menu-1 open" : "drop-down drop-menu-1 "}
-                      >
-                        <li key={i}className="nav-item">
-                          <a className="nav-link" href="">
-                            {menu1.linkText}
-                            {/* {console.log(menu1.linkText)} */}
-                          </a>
-                        </li>
-                      </ul>
-                    ))}
-                </li>
-              ))}
+          {
+          menuitem.length > 0 ? menuitem.map((item, i) => (
+                    <li key={i} className={`${item.child ? 'nav-item has-child open' : 'nav-item '} `} >
+                        {item.child ? <a  className="nav-link" onClick={e => e.preventDefault()} to="/"> {item.linkText} </a> : <a className="nav-link"  to={item.link}> {item.linkText} </a>}
+                        {item.child ?
+                            <ul className="drop-down drop-menu-1 " role="menu">
+                                {item.submenu.map((sub_item, i) => (
+                                    <li key={i} className={`${sub_item.child ? 'nav-item has-child open ' : ''} `}>
+                                        {sub_item.child ? <a className="nav-link" onClick={e => e.preventDefault()} to="/"> {sub_item.linkText} </a> : <a className="nav-link" to={sub_item.link}> {sub_item.linkText} </a>}
+                                        {sub_item.submenu ?
+                                            <ul className="drop-down drop-menu-2">
+                                                {sub_item.submenu.map((third_item, i) => (
+                                                    <li className="nav-item" key={i}><a className="nav-link"
+                                                        to={third_item.link}>{third_item.linkText}</a>
+                                                    </li>
+                                                ))}
+                                            </ul> : null}
+                                    </li>
+                                ))}
+                            </ul>
+                            : null
+                        }
+                    </li>
+                )) : null
+            }
           </ul>
         </div>
       </nav>
@@ -190,6 +193,35 @@ export default function Navbar(item) {
   );
 }
 
+
+
+
+// <ul className="navbar-nav">
+//             {
+//               menuitem.length > 0 &&
+//               menuitem.map((menu,i) => (
+//                 <li key={i} onClick={togglesubMenu} className=
+//                  {opensubMenu ? "nav-item has-child c-1  open" : "nav-item has-child c-1 "}
+//                 >
+//                   <a className="nav-link" href="https://www.startech.com.bd/">{menu.linkText}</a>
+
+//                   {
+//                   menu?.submenu?.length > 0 &&
+//                   menu.submenu.map((menu1,i) => (
+//                       <ul  className="drop-down drop-menu-1 "
+//                       // {opensubMenu ? "drop-down drop-menu-1 open" : "drop-down drop-menu-1 "}
+//                       >
+//                         <li key={i}className="nav-item">
+//                           <a className="nav-link" href="">
+//                             {menu1.linkText}
+//                             {/* {console.log(menu1.linkText)} */}
+//                           </a>
+//                         </li>
+//                       </ul>
+//                     ))}
+//                 </li>
+//               ))}
+//           </ul>
 
 //   if(item.childrens){
 //     return (

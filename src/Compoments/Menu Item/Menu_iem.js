@@ -1,7 +1,7 @@
 export const menuitem=
 [
     {
-        id: 1,
+        id: 0,
         link: '/',
         linkText: 'Home'
     },
@@ -55,7 +55,25 @@ export const menuitem=
             {
                 id: 25,
                 link: '/faq',
-                linkText: 'FAQ'
+                linkText: 'FAQ',
+                child: true,
+                submenu: [
+                    {
+                        id: 21,
+                        link: '/',
+                        linkText: ' One'
+                    },
+                    {
+                        id: 22,
+                        link: '/two',
+                        linkText: ' Two'
+                    },
+                    {
+                        id: 23,
+                        link: '/three',
+                        linkText: ' Three'
+                    },
+                ]
             },
         ]
     },
