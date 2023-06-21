@@ -29,6 +29,42 @@ export default function Navbar(item) {
 
   return (
     <body class={navsticky?"common-home on-scroll":"common-home"}>
+
+<div className="f-btn mc-toggler" id="cart">
+        <i className="material-icons">shopping_basket</i>
+        <div className="label">Cart</div>
+        <span className="counter">0</span>
+      </div>
+      <div className="f-btn cmpr-toggler" id="cmpr-btn">
+        <i className="material-icons">library_add</i>
+        <div className="label">Compare</div>
+        <span className="counter">0</span>
+      </div>
+      <div className="drawer cmpr-panel " id="cmpr-panel">
+        <div className="title">
+          <p>Compare Product</p>
+          <span className="cmpr-toggler">
+            <i className="material-icons">close</i>
+          </span>
+        </div>
+        <div className="content">
+          <div className="loader" />
+        </div>
+        <div className="footer btn-wrap" />
+      </div>
+      <div className="drawer m-cart" id="m-cart">
+        <div className="title">
+          <p>YOUR CART</p>
+          <span className="mc-toggler">
+            <i className="material-icons">close</i>
+          </span>
+        </div>
+        <div className="content">
+          <div className="loader" />
+        </div>
+        <div className="footer" />
+      </div>
+
     <header id="header">
       <div className="top">
         <div className="container">
@@ -130,11 +166,13 @@ export default function Navbar(item) {
                   <h5>Account</h5>
                 </a>
                 <p>
-                  <a href="https://www.startech.com.bd/account/register">
+                  <Link to="/signup">
                     Register
-                  </a>{" "}
-                  or{" "}
-                  <a href="https://www.startech.com.bd/account/login">Login</a>
+                  </Link> {" "}
+                  or {" "}
+                  <Link to="/login">
+                    Login
+                  </Link>
                 </p>
               </div>
             </div>
