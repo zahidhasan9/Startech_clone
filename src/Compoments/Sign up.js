@@ -1,4 +1,5 @@
-export const Foo = () => (
+import React from "react"
+const SignUp = () => (
     <>
     
       <header id="header">
@@ -10730,4 +10731,6 @@ export const Foo = () => (
       <div className="overlay" />
     </>
   )
+
+  export default SignUp
   
