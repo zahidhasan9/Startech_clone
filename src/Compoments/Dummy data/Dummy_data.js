@@ -19,7 +19,7 @@ export const products=
     {
         'id':"3",
         "name":"MSI Optix G24C4 23.6 Inch FHD Curved LED Gaming Monitor With 144Hz Refresh Rate",
-        "image":" MSI G2412 23.8  170Hz FHD IPS 1ms FreeSync Premium Gaming Monitor",
+        "image":" https://www.startech.com.bd/image/cache/catalog/monitor/msi/optix-g241v-e2/optix-g241v-e2-200x200.jpg",
          "price_old":"24,990",
          "price_new":"24,240"
 

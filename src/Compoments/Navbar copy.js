@@ -155,7 +155,7 @@ export default function Navbar(item) {
          
           <ul className="navbar-nav" onClick={togglesubMenu}>
           { menuitem.length > 0 ? menuitem.map((item, i) => (
-                    <li key={i} className={`${item.child  ? 'nav-item has-child ' : 'nav-item '} `}  >
+                    <li key={i} className={`${item.child  ? 'nav-item has-child open' : 'nav-item '} `}  >
                         {item.child ? <a  className="nav-link"  href="/"> {item.linkText} </a> : <a className="nav-link"  href={item.link}> {item.linkText} </a>}
                         {item.child ?
                             <ul className="drop-down drop-menu-1 " role="menu">
@@ -163,7 +163,7 @@ export default function Navbar(item) {
                                     <li key={i} className={`${sub_item.child ? 'nav-item has-child open ' : ''} `}>
                                         {sub_item.child ? <a className="nav-link"  href="/"> {sub_item.linkText} </a> : <a className="nav-link" href={sub_item.link}> {sub_item.linkText} </a>}
                                         {sub_item.submenu ?
-                                            <ul className="drop-down drop-menu-2">
+                                            <ul className="drop-down drop-menu-2 ">
                                                 {sub_item.submenu.map((third_item, i) => (
                                                     <li className="nav-item" key={i}><a className="nav-link"
                                                         href={third_item.link}>{third_item.linkText}</a>
