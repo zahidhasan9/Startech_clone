@@ -123,8 +123,8 @@ export default function Navbar(item) {
                 <p>Latest Offers</p>
               </div>
             </a>
-            <a
-              href="https://www.startech.com.bd/deals"
+            <Link
+              to="/deals"
               className="ac h-offer-icon"
             >
               <div className="ic">
@@ -134,7 +134,7 @@ export default function Navbar(item) {
                 <h5>16 Years Deals</h5>
                 <p>Special Deals</p>
               </div>
-            </a>
+            </Link>
             <a
               href="https://www.startech.com.bd/tool/pc_builder"
               className="ac h-desk build-pc"
