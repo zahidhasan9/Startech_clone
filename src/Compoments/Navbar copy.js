@@ -28,13 +28,15 @@ export default function Navbar(item) {
 
 
   return (
-    <body class={navsticky?"common-home on-scroll":"common-home"}>
+  <>
+    <body  className={navsticky?"common-home on-scroll":"common-home "}>
 
-<div className="f-btn mc-toggler" id="cart">
+        <div className="f-btn mc-toggler" id="cart">
         <i className="material-icons">shopping_basket</i>
         <div className="label">Cart</div>
         <span className="counter">0</span>
       </div>
+      
       <div className="f-btn cmpr-toggler" id="cmpr-btn">
         <i className="material-icons">library_add</i>
         <div className="label">Compare</div>
@@ -75,9 +77,9 @@ export default function Navbar(item) {
                 onClick={toggleMenu}
                 class={openMenu ? "close" : ""}
               >
-                <span />
-                <span />
-                <span />
+                 <span></span>
+                        <span></span>
+                        <span></span>
               </div>
             </div>
             <a className="brand" href="https://www.startech.com.bd/">
@@ -155,16 +157,16 @@ export default function Navbar(item) {
               </div>
             </div>
             <div className="ac">
-              <a
+              <Link
                 className="ic"
-                href="https://www.startech.com.bd/account/login"
+                to="/login"
               >
                 <i className="material-icons">person</i>
-              </a>
+              </Link>
               <div className="ac-content">
-                <a href="https://www.startech.com.bd/account/login">
+                <Link  to="/login">
                   <h5>Account</h5>
-                </a>
+                </Link>
                 <p>
                   <Link to="/signup">
                     Register
@@ -219,8 +221,9 @@ export default function Navbar(item) {
           </ul>
         </div>
       </nav>
-    </header>
+    </header> 
     </body>
+    </>
   );
 }
 

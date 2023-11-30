@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Menu_item from './Menu Item/Menu_iem'
 
 
@@ -107,22 +108,22 @@ export default function Navbar() {
               </div>
             </div>
             <div className="ac">
-              <a
+              <Link
                 className="ic"
-                href="https://www.startech.com.bd/account/login"
+                 to="/login"
               >
                 <i className="material-icons">person</i>
-              </a>
+              </Link>
               <div className="ac-content">
-                <a href="https://www.startech.com.bd/account/login">
+                <Link  to="/login">
                   <h5>Account</h5>
-                </a>
+                </Link>
                 <p>
                   <a href="https://www.startech.com.bd/account/register">
                     Register
                   </a>{" "}
                   or{" "}
-                  <a href="https://www.startech.com.bd/account/login">Login</a>
+                  <Link to="/login">Login</Link>
                 </p>
               </div>
             </div>

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Banner() {
   return (
-    <div className="bg-gray content ">
+    <div className="bg-gray content">
         <div className="container">
         <div className="row">
           <div className="col-md-12 col-lg-9">
@@ -10,7 +10,7 @@ export default function Banner() {
               <div className="slide">
                 <a href="https://www.startech.com.bd/deals">
                   <img
-                    src="https://www.startech.com.bd/image/cache/catalog/home/banner/16th-anniversary-mega-deal-live-982x500.webp"
+                    src="https://www.startech.com.bd/image/cache/catalog/home/banner/Asus%20laptop%20Offer-982x500.png"
                     alt="Mega Deal"
                     className="img-responsive"
                     width={982}
@@ -76,7 +76,7 @@ export default function Banner() {
             <div className="ads loaded">
               <a href="https://www.startech.com.bd/information/offer/info?offer_id=828">
                 <img
-                  src="https://www.startech.com.bd/image/catalog/home/banner/small/dhaka-express-delivery.webp"
+                  src="https://www.startech.com.bd/image/catalog/home/banner/small/introducing-laptop-finder-home.webp"
                   alt="home |Dhaka City Express delivery"
                   width={300}
                   height={193}

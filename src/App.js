@@ -1,24 +1,29 @@
 import React from "react";
-import {BrowserRouter as Router} from 'react-router-dom';
-import Cart_page from "./Compoments/Cart_page";
-// import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Navbar_copy from './Compoments/Navbar copy';
 import Footer from "./Compoments/Footer";
-import Navbar_copy from "./Compoments/Navbar copy";
 import Login from "./Compoments/Login";
-import MegaDeal from "./Compoments/MegaDeal";
+import Layout from './Layout';
+import Home from "./l";
+import Signup from "./Compoments/SignUp";
 function App() {
   return (
-  <>
-  <div className="bg-gray content ">
-   <Navbar_copy/>
-  {/* <Navbar/> */}
-  <Cart_page/>
-  <Banner/>
-<Middle_Page_main/>
-  <About/>
-  <Footer/>
-  </div>
-  </>
+    <>
+      {/* <div className="bg-gray content "> */}
+     <div >
+         <Navbar_copy />
+
+        <Routes>
+        <Route path="/" element={<Layout/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/signup" element={<Signup/>} />
+       
+        </Routes> 
+        
+        <Footer />
+        {/* <Home></Home> */}
+      </div>
+    </>
 
   );
 }
