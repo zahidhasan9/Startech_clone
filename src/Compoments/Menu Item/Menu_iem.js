@@ -3,33 +3,47 @@ export const menuitem=
     {
         id: 0,
         link: '/',
-        linkText: 'Home'
-    },
-    {
-        id: 1,
-        linkText: 'About',
-        child: true,
-        submenu: [
+        linkText: 'Desktop',
+        child:true,
+        submenu:[
             {
-                id: 11,
+            id: 0,
+            link: '/',
+            linkText: 'Desktop Offer',
+            },
+            {
+                id: 0,
                 link: '/',
-                linkText: 'Home One'
-            },
-            {
-                id: 12,
-                link: '/hometwo',
-                linkText: 'Home Two'
-            },
-            {
-                id: 13,
-                link: '/homethree',
-                linkText: 'Home Three'
-            },
+                linkText: 'Desktop',
+                child:true,
+                submenu:[
+                    {
+                        id: 0,
+                        link: '/',
+                        linkText: 'Star PC',
+                        child: true,
+                    },
+                    {
+                        id: 1,
+                        link: '/',
+                        linkText: 'Ryzen PC',
+                        child: true,
+                    }
+                    
+                ]
+            }
         ]
     },
     {
+        id: 1,
+        linkText: 'Leptop',
+        link: '/',
+        child: false,
+       
+    },
+    {
         id: 2,
-        linkText: 'Pages',
+        linkText: 'Component',
         child: true,
         submenu: [
             {
@@ -76,5 +90,12 @@ export const menuitem=
                 ]
             },
         ]
+    },
+    {
+        id: "Monitor",
+        linkText: 'Leptop',
+        link: '/',
+        child: false,
+       
     },
 ]

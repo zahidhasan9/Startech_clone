@@ -29,6 +29,42 @@ export default function Navbar(item) {
 
   return (
     <body class={navsticky?"common-home on-scroll":"common-home"}>
+
+<div className="f-btn mc-toggler" id="cart">
+        <i className="material-icons">shopping_basket</i>
+        <div className="label">Cart</div>
+        <span className="counter">0</span>
+      </div>
+      <div className="f-btn cmpr-toggler" id="cmpr-btn">
+        <i className="material-icons">library_add</i>
+        <div className="label">Compare</div>
+        <span className="counter">0</span>
+      </div>
+      <div className="drawer cmpr-panel " id="cmpr-panel">
+        <div className="title">
+          <p>Compare Product</p>
+          <span className="cmpr-toggler">
+            <i className="material-icons">close</i>
+          </span>
+        </div>
+        <div className="content">
+          <div className="loader" />
+        </div>
+        <div className="footer btn-wrap" />
+      </div>
+      <div className="drawer m-cart" id="m-cart">
+        <div className="title">
+          <p>YOUR CART</p>
+          <span className="mc-toggler">
+            <i className="material-icons">close</i>
+          </span>
+        </div>
+        <div className="content">
+          <div className="loader" />
+        </div>
+        <div className="footer" />
+      </div>
+
     <header id="header">
       <div className="top">
         <div className="container">
@@ -87,8 +123,8 @@ export default function Navbar(item) {
                 <p>Latest Offers</p>
               </div>
             </a>
-            <a
-              href="https://www.startech.com.bd/deals"
+            <Link
+              to="/deals"
               className="ac h-offer-icon"
             >
               <div className="ic">
@@ -98,7 +134,7 @@ export default function Navbar(item) {
                 <h5>16 Years Deals</h5>
                 <p>Special Deals</p>
               </div>
-            </a>
+            </Link>
             <a
               href="https://www.startech.com.bd/tool/pc_builder"
               className="ac h-desk build-pc"
@@ -130,11 +166,13 @@ export default function Navbar(item) {
                   <h5>Account</h5>
                 </a>
                 <p>
-                  <a href="https://www.startech.com.bd/account/register">
+                  <Link to="/signup">
                     Register
-                  </a>{" "}
-                  or{" "}
-                  <a href="https://www.startech.com.bd/account/login">Login</a>
+                  </Link> {" "}
+                  or {" "}
+                  <Link to="/login">
+                    Login
+                  </Link>
                 </p>
               </div>
             </div>
@@ -155,7 +193,7 @@ export default function Navbar(item) {
          
           <ul className="navbar-nav" onClick={togglesubMenu}>
           { menuitem.length > 0 ? menuitem.map((item, i) => (
-                    <li key={i} className={`${item.child  ? 'nav-item has-child ' : 'nav-item '} `}  >
+                    <li key={i} className={`${item.child  ? 'nav-item has-child open' : 'nav-item '} `}  >
                         {item.child ? <a  className="nav-link"  href="/"> {item.linkText} </a> : <a className="nav-link"  href={item.link}> {item.linkText} </a>}
                         {item.child ?
                             <ul className="drop-down drop-menu-1 " role="menu">
@@ -163,7 +201,7 @@ export default function Navbar(item) {
                                     <li key={i} className={`${sub_item.child ? 'nav-item has-child open ' : ''} `}>
                                         {sub_item.child ? <a className="nav-link"  href="/"> {sub_item.linkText} </a> : <a className="nav-link" href={sub_item.link}> {sub_item.linkText} </a>}
                                         {sub_item.submenu ?
-                                            <ul className="drop-down drop-menu-2">
+                                            <ul className="drop-down drop-menu-2 ">
                                                 {sub_item.submenu.map((third_item, i) => (
                                                     <li className="nav-item" key={i}><a className="nav-link"
                                                         href={third_item.link}>{third_item.linkText}</a>
