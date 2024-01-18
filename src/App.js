@@ -9,6 +9,7 @@ import Signup from "./Compoments/SignUp";
 function App() {
   return (
     <>
+    {/* rimel */}
       {/* <div className="bg-gray content "> */}
      <div >
          <Navbar_copy />
