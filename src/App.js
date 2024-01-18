@@ -6,10 +6,11 @@ import Login from "./Compoments/Login";
 import Layout from './Layout';
 import Home from "./l";
 import Signup from "./Compoments/SignUp";
+import Account_Dash from "./Compoments/Account_Dash";
+import LaptopPage from "./Compoments/Products Page/All Laptop/LaptopPage";
 function App() {
   return (
     <>
-    {/* rimel */}
       {/* <div className="bg-gray content "> */}
      <div >
          <Navbar_copy />
@@ -18,6 +19,8 @@ function App() {
         <Route path="/" element={<Layout/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<Signup/>} />
+        <Route path="/account" element={<Account_Dash/>} />
+        <Route path="/all-notebook" element={<LaptopPage/>} />
        
         </Routes> 
         

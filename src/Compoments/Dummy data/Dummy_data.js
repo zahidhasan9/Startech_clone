@@ -143,3 +143,55 @@ export const DealsData=
 
     },
 ]
+
+export const LaptopData=
+[
+    {
+        'id':"1",
+        "name":"DOEL Freedom A9 AMD A9-9425 14.1 HD Laptop",
+        "image":"https://www.startech.com.bd/image/cache/catalog/laptop/doel/freedom-a9/a9-01-228x228.webp",
+        "Processor":"4GB DDR4 RAM, Storage: 256GB SSD",
+        "RAM":"4GB, Storage: 240GB SSD",
+        "Display":" 11.6 HD (1366 x 768)",
+        "Features":"Multi-gesture touchpad",
+        "price_old":"36,850",
+        "price_new":"34,500"
+
+    },
+    {
+        "id":"2",
+        "name":"Acer TravelMate TMB 311-31-C3CD Celeron N4020 11.6 HD Laptop",
+        "image":"https://www.startech.com.bd/image/cache/catalog/laptop/acer/travelmate-tmb-311-31-c3cd/travelmate-tmb-311-31-c3cd-01-228x228.jpg",
+        "Processor":"AMD A9-9425 (1MB Cache, 3.10GHz up to 3.70GHz)",
+        "RAM":"4GB, Storage: 240GB SSD",
+        "Display":"14.1 HD (1366x768)",
+        "Features":"HD Webcam, Type-C",
+        "price_old":"128000",
+        "price_new":"125000"
+
+    },
+    {
+        "id":"3",
+        "name":"Lenovo IdeaPad Slim 3i Intel Celeron N4020 15.6 HD Laptop",
+        "image":"https://www.startech.com.bd/image/cache/catalog/laptop/acer/ideapad-slim-3i/ideapad-slim-3i-01-228x228.webp",
+        "Processor":"AMD A9-9425 (1MB Cache, 3.10GHz up to 3.70GHz)",
+        "RAM":"4GB, Storage: 240GB SSD",
+        "Display":"14.1 HD (1366x768)",
+        "Features":"HD Webcam, Type-C",
+        "price_old":"128000",
+        "price_new":"125000"
+
+    },
+    {
+        "id":"4",
+        "name":"Lenovo IdeaPad D330 10IGL Intel CDC N4020 10.1 HD Touch Laptop",
+        "image":"https://www.startech.com.bd/image/cache/catalog/laptop/acer/travelmate-tmb-311-31-c3cd/travelmate-tmb-311-31-c3cd-01-228x228.jpg",
+        "Processor":"AMD A9-9425 (1MB Cache, 3.10GHz up to 3.70GHz)",
+        "RAM":"4GB, Storage: 240GB SSD",
+        "Display":"14.1 HD (1366x768)",
+        "Features":"HD Webcam, Type-C",
+        "price_old":"128000",
+        "price_new":"125000"
+
+    }
+]
